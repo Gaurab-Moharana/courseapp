@@ -110,12 +110,12 @@ const Home = () => {
   return (
     <div className="bg-gradient-to-r from-black to-blue-950 min-h-screen text-white">
       {/* Header */}
-      <header className="flex flex-col md:flex-row md:items-center md:justify-between px-4 py-4 gap-4 md:gap-0">
+      <header className="flex flex-row md:flex-row md:items-center md:justify-between px-4 py-4 gap-4 md:gap-0">
         <div className="flex items-center space-x-2">
           <img src={logo} alt="Logo" className="w-10 h-10 rounded-full" />
           <h1 className="text-xl sm:text-2xl font-bold">CourseHub</h1>
         </div>
-        <div className="flex flex-row sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0 items-start sm:items-center">
+        <div className="flex flex-row gap-4 sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0 items-start sm:items-center">
           {isLoggedIn ? (
             <button
               onClick={handleLogout}
