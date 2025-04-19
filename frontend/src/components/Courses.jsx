@@ -165,13 +165,13 @@ const Courses = () => {
         {/* Search Bar */}
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center space-x-3 w-full md:w-[60%]">
-            <div className="flex items-center w-full">
+            <div className="flex items-center w-80">
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Type here to search..."
-                className="border border-gray-300 text-white bg-transparent rounded-l-full ml-10 px-4 py-2 h-10 w-full focus:outline-none"
+                className="border border-gray-300 text-white bg-transparent rounded-l-full ml-10 px-4 py-2 h-10 w-80 focus:outline-none"
               />
               <button
                 onClick={handleSearch}
