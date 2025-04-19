@@ -62,13 +62,13 @@ const Login = () => {
         <div className="flex flex-row flex-wrap sm:space-x-4 space-x-2 items-start sm:items-center">
           <Link
             to="/signup"
-            className="border border-white text-xs sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded hover:bg-white hover:text-black"
+            className="border border-white text-sm sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded hover:bg-white hover:text-black"
           >
             Signup
           </Link>
           <Link
             to="/login"
-            className="border border-white text-xs sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded hover:bg-white hover:text-black"
+            className="border border-white text-sm sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded hover:bg-white hover:text-black"
           >
             Join now
           </Link>
@@ -92,7 +92,7 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
-              className="w-full p-2 border rounded mb-4 text-black"
+              className="w-full p-2 border rounded mb-4"
               required
             />
             <input
@@ -101,12 +101,12 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
-              className="w-full p-2 border rounded mb-4 text-black"
+              className="w-full p-2 border rounded mb-4 "
               required
             />
             <button
               type="submit"
-              className="w-full bg-green-600 text-white py-2 rounded hover:bg-white hover:text-black duration-300 cursor-pointer font-bold"
+              className="w-full bg-green-600 text-white py-2 rounded hover:bg-white  duration-300 cursor-pointer font-bold"
             >
               Login
             </button>
