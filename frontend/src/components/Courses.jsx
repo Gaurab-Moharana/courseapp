@@ -16,8 +16,7 @@ const Courses = () => {
   const [loading, setLoading] = useState(true);
   const [filteredCourses, setFilteredCourses] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  console.log("courses: ", courses);
-  // Check if user is logged in on component mount
+
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
 
@@ -33,17 +32,13 @@ const Courses = () => {
     }
   }, []);
 
-  // Logout function
   const handleLogout = async () => {
     try {
       const response = await axios.get(`${BACKEND_URL}/user/logout`, {
         withCredentials: true,
       });
 
-      console.log("Logout Response:", response.data);
       toast.success(response.data.message || "Logged out successfully!");
-
-      // Remove token and reload page to reflect state change
       localStorage.removeItem("user");
       setIsLoggedIn(false);
       window.location.href = "/";
@@ -53,14 +48,12 @@ const Courses = () => {
     }
   };
 
-  // Fetch courses
   useEffect(() => {
     const fetchCourses = async () => {
       try {
         const response = await axios.get(`${BACKEND_URL}/course/courses`, {
           withCredentials: true,
         });
-        console.log(response.data.courses);
         setCourses(response.data.courses);
         setFilteredCourses(response.data.courses);
         setLoading(false);
@@ -71,7 +64,6 @@ const Courses = () => {
     fetchCourses();
   }, []);
 
-  //Search function
   const handleSearch = () => {
     const filtered = courses.filter(
       (course) =>
@@ -81,13 +73,13 @@ const Courses = () => {
     setFilteredCourses(filtered);
   };
 
-  // Toggle Sidebar
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
   return (
     <div className="flex min-h-screen relative">
+      {/* Backdrop for mobile */}
       {isSidebarOpen && (
         <div
           onClick={toggleSidebar}
@@ -95,22 +87,29 @@ const Courses = () => {
         />
       )}
 
-      <button
-        onClick={toggleSidebar}
-        className="md:hidden fixed top-4 left-4 z-[999] text-white bg-gray-800 hover:bg-gray-700 transition-colors p-2 rounded-full shadow-lg"
-      >
-        {isSidebarOpen ? (
-          <HiX className="text-3xl" />
-        ) : (
+      {/* Menu button (only shows when sidebar is closed on mobile) */}
+      {!isSidebarOpen && (
+        <button
+          onClick={toggleSidebar}
+          className="md:hidden fixed top-4 left-4 z-[999] text-white bg-gray-800 hover:bg-gray-700 transition-colors p-2 rounded-full shadow-lg"
+        >
           <HiMenu className="text-3xl" />
-        )}
-      </button>
+        </button>
+      )}
 
+      {/* Sidebar */}
       <aside
         className={`fixed top-0 left-0 bg-blue-950 h-screen w-64 p-5 transform transition-transform duration-300 ease-in-out z-50 ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0`}
       >
+        {/* Close Icon inside Sidebar (mobile only) */}
+        <div className="flex justify-end md:hidden">
+          <button onClick={toggleSidebar} className="text-white text-3xl mb-6">
+            <HiX />
+          </button>
+        </div>
+
         <nav>
           <ul>
             <li className="mb-4">
@@ -161,32 +160,35 @@ const Courses = () => {
         </nav>
       </aside>
 
-      <main className="bg-gradient-to-r from-black to-blue-950 ml-0 md:ml-64 w-full p-10">
+      {/* Main content */}
+      <main className="bg-gradient-to-r from-black to-blue-950 ml-0 md:ml-64 w-full p-6 md:p-10">
         {/* Search Bar */}
-        <div className="flex justify-end items-center mb-6">
-          <div className="flex items-center">
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Type here to search..."
-              className="border border-gray-300 text-white bg-transparent rounded-l-full px-4 py-2 h-10 focus:outline-none"
-            />
-            <button
-              onClick={handleSearch}
-              className="h-10 border border-gray-300 rounded-r-full px-4 flex items-center justify-center"
-            >
-              <FiSearch className="text-xl text-gray-600 hover:cursor-pointer hover:text-white" />
-            </button>
+        <div className="flex justify-between items-center mb-4">
+          <div className="flex items-center space-x-3 w-full md:w-[60%]">
+            <div className="flex items-center w-full">
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Type here to search..."
+                className="border border-gray-300 text-white bg-transparent rounded-l-full px-4 py-2 h-10 w-full focus:outline-none"
+              />
+              <button
+                onClick={handleSearch}
+                className="h-10 border border-gray-300 rounded-r-full px-4 flex items-center justify-center"
+              >
+                <FiSearch className="text-xl text-gray-600 hover:cursor-pointer hover:text-white" />
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Heading */}
-        <h1 className="text-3xl font-bold font-sans text-white text-left mb-6">
+        {/* Heading below search bar */}
+        <h1 className="text-3xl font-bold font-sans text-white mb-6">
           Courses
         </h1>
 
-        {/* Courses */}
+        {/* Courses Section */}
         <div className="overflow-y-scroll h-[75vh] pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900 scrollbar-thumb-rounded">
           {loading ? (
             <p className="text-center text-gray-500">Loading...</p>
