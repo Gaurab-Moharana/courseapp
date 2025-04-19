@@ -110,7 +110,7 @@ const Home = () => {
   return (
     <div className="bg-gradient-to-r from-black to-blue-950 min-h-screen text-white">
       {/* Header */}
-      <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between px-4 py-4 gap-4 sm:gap-0">
+      <header className="flex flex-row sm:flex-row sm:items-center sm:justify-between px-4 py-4 gap-4 sm:gap-0">
         <div className="flex items-center space-x-2">
           <img src={logo} alt="Logo" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" />
           <h1 className="text-lg sm:text-xl md:text-2xl font-bold">CourseHub</h1>
