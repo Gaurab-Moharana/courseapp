@@ -18,7 +18,7 @@ const DB_URL = process.env.MONGO_URL;
 
 const allowedOrigins = [
   "http://localhost:3000",
-  "http://localhost:5173",
+ "https://courseapp-ochre.vercel.app",
   process.env.FRONTEND_URL, // from Render or .env
 ].filter(Boolean); // r
 
