@@ -48,43 +48,43 @@ const Login = () => {
   return (
     <div className="bg-gradient-to-r from-black to-blue-950 min-h-screen text-white">
       {/* Header */}
-      <header className="flex flex-row justify-between sm:flex-row sm:items-center sm:justify-between px-4 py-4 gap-4 sm:gap-0">
+      <header className="flex flex-row justify-between sm:items-center px-4 py-4 gap-2 sm:gap-0">
         <div className="flex items-center space-x-2">
           <img
             src={logo}
-            alt="CourseHub Logo"
-            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full"
+            alt="Logo"
+            className="w-7 h-7 sm:w-10 sm:h-10 rounded-full"
           />
-          <Link to={"/"} className="text-lg sm:text-xl md:text-2xl font-bold ">
+          <Link to="/" className="text-base sm:text-xl md:text-2xl font-bold">
             CourseHub
           </Link>
         </div>
-        <div className="flex flex-row sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0  items-start gap-2 sm:items-center">
+        <div className="flex flex-row flex-wrap sm:space-x-4 space-x-2 items-start sm:items-center">
           <Link
             to="/signup"
-            className="bg-transparent text-white py-2 px-4 border border-white rounded hover:bg-white duration-300 hover:text-black"
+            className="border border-white text-xs sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded hover:bg-white hover:text-black"
           >
             Signup
           </Link>
           <Link
             to="/login"
-            className="bg-transparent text-white py-2 px-4 border border-white rounded hover:bg-white duration-300 hover:text-black"
+            className="border border-white text-xs sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded hover:bg-white hover:text-black"
           >
             Join now
           </Link>
         </div>
       </header>
 
-      {/* Signup Form Placeholder (centered) */}
+      {/* Login Form */}
       <div className="flex justify-center items-center min-h-[calc(100vh-80px)] px-4">
         <div className="bg-gray-900 text-white rounded-lg p-8 w-full max-w-md shadow-xl">
           <h2 className="text-2xl font-bold text-center mb-6">
             Welcome to <span className="text-green-500">CourseHub</span>
           </h2>
-          <p className="text-center text-gray-500 mb-6">
+          <p className="text-center text-gray-400 mb-6 text-sm sm:text-base">
             Please login to access courses
           </p>
-          {/* Replace below with your form */}
+
           <form onSubmit={handleSubmit}>
             <input
               type="email"
@@ -92,7 +92,7 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
-              className="w-full p-2 border rounded mb-4"
+              className="w-full p-2 border rounded mb-4 text-black"
               required
             />
             <input
@@ -101,7 +101,7 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
-              className="w-full p-2 border rounded mb-4"
+              className="w-full p-2 border rounded mb-4 text-black"
               required
             />
             <button
