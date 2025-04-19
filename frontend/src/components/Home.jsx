@@ -110,16 +110,16 @@ const Home = () => {
   return (
     <div className="bg-gradient-to-r from-black to-blue-950 min-h-screen text-white">
       {/* Header */}
-      <header className="flex flex-row md:flex-row md:items-center md:justify-between px-4 py-4 gap-4 md:gap-0">
+      <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between px-4 py-4 gap-4 sm:gap-0">
         <div className="flex items-center space-x-2">
-          <img src={logo} alt="Logo" className="w-10 h-10 rounded-full" />
-          <h1 className="text-xl sm:text-2xl font-bold">CourseHub</h1>
+          <img src={logo} alt="Logo" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" />
+          <h1 className="text-lg sm:text-xl md:text-2xl font-bold">CourseHub</h1>
         </div>
-        <div className="flex flex-row gap-4 sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0 items-start sm:items-center">
+        <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0 items-start sm:items-center">
           {isLoggedIn ? (
             <button
               onClick={handleLogout}
-              className="border border-white px-4 py-2 rounded hover:bg-white hover:text-black"
+              className="border border-white text-sm sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded hover:bg-white hover:text-black"
             >
               Logout
             </button>
@@ -127,13 +127,13 @@ const Home = () => {
             <>
               <Link
                 to="/login"
-                className="border border-white px-4 py-2 rounded hover:bg-white hover:text-black"
+                className="border border-white text-sm sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded hover:bg-white hover:text-black"
               >
                 Login
               </Link>
               <Link
                 to="/signup"
-                className="border border-white px-4 py-2 rounded hover:bg-white hover:text-black"
+                className="border border-white text-sm sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded hover:bg-white hover:text-black"
               >
                 Signup
               </Link>
@@ -141,7 +141,7 @@ const Home = () => {
           )}
         </div>
       </header>
-
+  
       {/* Main Section */}
       <section className="text-center py-16 px-4">
         <h1 className="text-4xl sm:text-6xl font-bold">CourseHub</h1>
@@ -157,7 +157,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
-
+  
       {/* Courses Slider */}
       <section className="pb-8 px-2">
         <Slider {...settings}>
@@ -183,7 +183,7 @@ const Home = () => {
           ))}
         </Slider>
       </section>
-
+  
       {/* Footer */}
       <footer className="text-white px-4 py-8">
         <hr className="border-gray-700 my-6" />
@@ -207,7 +207,7 @@ const Home = () => {
               </a>
             </div>
           </div>
-
+  
           {/* Column 2 */}
           <div className="flex flex-col items-center">
             <h3 className="text-lg font-semibold mb-4">Connect with us</h3>
@@ -217,7 +217,7 @@ const Home = () => {
               <li>GitHub: CourseHub</li>
             </ul>
           </div>
-
+  
           {/* Column 3 */}
           <div className="flex flex-col items-center">
             <h3 className="text-lg font-semibold mb-4">© 2025 CourseHub</h3>
@@ -231,6 +231,7 @@ const Home = () => {
       </footer>
     </div>
   );
+  
 };
 
 export default Home;
