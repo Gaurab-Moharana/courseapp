@@ -170,17 +170,18 @@ const Courses = () => {
               isSidebarOpen ? "md:w-[calc(100%-16rem)]" : "md:w-[60%]"
             } transition-all duration-300`}
           >
-            <div className="flex items-center w-full">
+            <div className="flex items-center w-full relative">
+              {/* Padding left to avoid overlap with HiMenu */}
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Type here to search..."
-                className="border border-gray-300 text-white bg-transparent rounded-l-full px-4 py-2 h-10 w-full focus:outline-none"
+                className="border border-gray-300 text-white bg-transparent rounded-l-full px-4 py-2 h-10 w-full focus:outline-none pl-12"
               />
               <button
                 onClick={handleSearch}
-                className="h-10 border border-gray-300 rounded-r-full px-4 flex items-center justify-center"
+                className="h-10 border border-gray-300 rounded-r-full px-4 flex items-center justify-center absolute right-0 top-0 bottom-0"
               >
                 <FiSearch className="text-xl text-gray-600 hover:cursor-pointer hover:text-white" />
               </button>
