@@ -155,6 +155,15 @@ const Purchases = () => {
           isSidebarOpen ? "ml-64" : "ml-0"
         } md:ml-64 overflow-auto`}
       >
+        {/* Sidebar Toggle Button for small screens */}
+        {!isSidebarOpen && (
+          <div className="md:hidden mb-4">
+            <button onClick={toggleSidebar} className="text-white text-3xl">
+              <HiMenu />
+            </button>
+          </div>
+        )}
+
         <h2 className="text-xl text-white font-bold mb-6">My Purchases</h2>
 
         {errorMessage && (
