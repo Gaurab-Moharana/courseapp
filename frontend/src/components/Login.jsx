@@ -67,7 +67,7 @@ const Login = () => {
             Signup
           </Link>
           <Link
-            to="/login"
+            to="/signup"
             className="border border-white text-sm sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded hover:bg-white hover:text-black"
           >
             Join now
