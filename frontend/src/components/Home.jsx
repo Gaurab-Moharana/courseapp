@@ -115,7 +115,7 @@ const Home = () => {
           <img src={logo} alt="Logo" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" />
           <h1 className="text-lg sm:text-xl md:text-2xl font-bold">CourseHub</h1>
         </div>
-        <div className="flex flex-row sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0  items-start sm:items-center">
+        <div className="flex flex-row sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0  items-start gap-2 sm:items-center">
           {isLoggedIn ? (
             <button
               onClick={handleLogout}
