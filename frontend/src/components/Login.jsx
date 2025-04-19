@@ -48,18 +48,18 @@ const Login = () => {
   return (
     <div className="bg-gradient-to-r from-black to-blue-950 min-h-screen text-white">
       {/* Header */}
-      <header className="flex items-center justify-between container mx-auto px-4 py-6">
+      <header className="flex flex-row justify-between sm:flex-row sm:items-center sm:justify-between px-4 py-4 gap-4 sm:gap-0">
         <div className="flex items-center space-x-2">
           <img
             src={logo}
             alt="CourseHub Logo"
-            className="w-10 h-10 rounded-full"
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full"
           />
-          <Link to={"/"} className="text-2xl font-bold ">
+          <Link to={"/"} className="text-lg sm:text-xl md:text-2xl font-bold ">
             CourseHub
           </Link>
         </div>
-        <div className="space-x-4">
+        <div className="flex flex-row sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0  items-start gap-2 sm:items-center">
           <Link
             to="/signup"
             className="bg-transparent text-white py-2 px-4 border border-white rounded hover:bg-white duration-300 hover:text-black"
