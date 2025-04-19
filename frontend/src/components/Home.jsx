@@ -110,44 +110,42 @@ const Home = () => {
   return (
     <div className="bg-gradient-to-r from-black to-blue-950 min-h-screen text-white">
       {/* Header */}
-      <header className="flex items-center justify-between px-4 py-4">
+      <header className="flex flex-col md:flex-row md:items-center md:justify-between px-4 py-4 gap-4 md:gap-0">
         <div className="flex items-center space-x-2">
           <img src={logo} alt="Logo" className="w-10 h-10 rounded-full" />
-          <h1 className="text-2xl font-bold">CourseHub</h1>
+          <h1 className="text-xl sm:text-2xl font-bold">CourseHub</h1>
         </div>
-        <div className="space-x-4">
-          <div className="space-x-4">
-            {isLoggedIn ? (
-              <button
-                onClick={handleLogout}
+        <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0 items-start sm:items-center">
+          {isLoggedIn ? (
+            <button
+              onClick={handleLogout}
+              className="border border-white px-4 py-2 rounded hover:bg-white hover:text-black"
+            >
+              Logout
+            </button>
+          ) : (
+            <>
+              <Link
+                to="/login"
                 className="border border-white px-4 py-2 rounded hover:bg-white hover:text-black"
               >
-                Logout
-              </button>
-            ) : (
-              <>
-                <Link
-                  to="/login"
-                  className="border border-white px-4 py-2 rounded hover:bg-white hover:text-black"
-                >
-                  Login
-                </Link>
-                <Link
-                  to="/signup"
-                  className="border border-white px-4 py-2 rounded hover:bg-white hover:text-black"
-                >
-                  Signup
-                </Link>
-              </>
-            )}
-          </div>
+                Login
+              </Link>
+              <Link
+                to="/signup"
+                className="border border-white px-4 py-2 rounded hover:bg-white hover:text-black"
+              >
+                Signup
+              </Link>
+            </>
+          )}
         </div>
       </header>
 
       {/* Main Section */}
-      <section className="text-center py-20">
-        <h1 className="text-6xl font-bold">CourseHub</h1>
-        <p className="text-gray-500 mt-2">
+      <section className="text-center py-16 px-4">
+        <h1 className="text-4xl sm:text-6xl font-bold">CourseHub</h1>
+        <p className="text-gray-400 mt-2 text-sm sm:text-base">
           Sharpen your skills with courses created by experts
         </p>
         <div className="mt-8">
@@ -161,18 +159,18 @@ const Home = () => {
       </section>
 
       {/* Courses Slider */}
-      <section className="pb-8">
+      <section className="pb-8 px-2">
         <Slider {...settings}>
           {courses.map((course) => (
-            <div key={course._id} className="p-6 text-center">
+            <div key={course._id} className="p-4 text-center">
               <div className="bg-gray-900 rounded-lg border overflow-hidden hover:scale-105 transition-transform">
                 <img
-                  className="h-30 w-full object-contain bg-gray-900 my-4"
+                  className="h-40 w-full object-contain bg-gray-900 my-4"
                   src={course?.image?.url}
                   alt={course.title}
                 />
                 <div className="p-5">
-                  <h2 className="text-xl font-bold">{course.title}</h2>
+                  <h2 className="text-lg font-bold">{course.title}</h2>
                   <button
                     onClick={() => handleEnroll(course._id)}
                     className="mt-4 bg-green-500 px-4 py-2 rounded-full text-white hover:bg-white cursor-pointer hover:text-black"
@@ -189,7 +187,7 @@ const Home = () => {
       {/* Footer */}
       <footer className="text-white px-4 py-8">
         <hr className="border-gray-700 my-6" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center md:text-left">
           {/* Column 1 */}
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center space-x-2">
@@ -213,7 +211,7 @@ const Home = () => {
           {/* Column 2 */}
           <div className="flex flex-col items-center">
             <h3 className="text-lg font-semibold mb-4">Connect with us</h3>
-            <ul className="text-gray-400 space-y-2">
+            <ul className="text-gray-400 space-y-2 text-sm">
               <li>Contact: +91 2000345222</li>
               <li>Email: coursehub222@gmail.com</li>
               <li>GitHub: CourseHub</li>
@@ -223,7 +221,7 @@ const Home = () => {
           {/* Column 3 */}
           <div className="flex flex-col items-center">
             <h3 className="text-lg font-semibold mb-4">© 2025 CourseHub</h3>
-            <ul className="text-gray-400 space-y-2">
+            <ul className="text-gray-400 space-y-2 text-sm">
               <li>Terms & Conditions</li>
               <li>Privacy Policy</li>
               <li>Refund & Cancellation</li>
