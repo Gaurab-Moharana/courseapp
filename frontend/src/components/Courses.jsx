@@ -88,7 +88,6 @@ const Courses = () => {
 
   return (
     <div className="flex min-h-screen relative">
-      {/* Backdrop for mobile when sidebar is open */}
       {isSidebarOpen && (
         <div
           onClick={toggleSidebar}
@@ -96,15 +95,17 @@ const Courses = () => {
         />
       )}
 
-      {/* Hamburger / Close Icon */}
       <button
         onClick={toggleSidebar}
-        className="md:hidden fixed top-4 left-4 z-[999] text-3xl text-white bg-gray-900 p-2 rounded-full shadow-lg"
+        className="md:hidden fixed top-4 left-4 z-[999] text-white bg-gray-800 hover:bg-gray-700 transition-colors p-2 rounded-full shadow-lg"
       >
-        {isSidebarOpen ? <HiX /> : <HiMenu />}
+        {isSidebarOpen ? (
+          <HiX className="text-3xl" />
+        ) : (
+          <HiMenu className="text-3xl" />
+        )}
       </button>
 
-      {/* Sidebar */}
       <aside
         className={`fixed top-0 left-0 bg-blue-950 h-screen w-64 p-5 transform transition-transform duration-300 ease-in-out z-50 ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
@@ -160,30 +161,32 @@ const Courses = () => {
         </nav>
       </aside>
 
-      {/* Main content */}
       <main className="bg-gradient-to-r from-black to-blue-950 ml-0 md:ml-64 w-full p-10">
-        <header className="flex justify-between items-center mb-10">
-          <h1 className="text-3xl font-bold font-sans text-white">Courses</h1>
-          <div className="flex items-center space-x-3">
-            <div className="flex items-center">
-              <input
-                type="text"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Type here to search..."
-                className="border border-gray-300 text-white bg-transparent rounded-l-full px-4 py-2 h-10 focus:outline-none"
-              />
-              <button
-                onClick={handleSearch}
-                className="h-10 border border-gray-300 rounded-r-full px-4 flex items-center justify-center"
-              >
-                <FiSearch className="text-xl text-gray-600 hover:cursor-pointer hover:text-white" />
-              </button>
-            </div>
+        {/* Search Bar */}
+        <div className="flex justify-end items-center mb-6">
+          <div className="flex items-center">
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Type here to search..."
+              className="border border-gray-300 text-white bg-transparent rounded-l-full px-4 py-2 h-10 focus:outline-none"
+            />
+            <button
+              onClick={handleSearch}
+              className="h-10 border border-gray-300 rounded-r-full px-4 flex items-center justify-center"
+            >
+              <FiSearch className="text-xl text-gray-600 hover:cursor-pointer hover:text-white" />
+            </button>
           </div>
-        </header>
+        </div>
 
-        {/* Courses Section */}
+        {/* Heading */}
+        <h1 className="text-3xl font-bold font-sans text-white text-left mb-6">
+          Courses
+        </h1>
+
+        {/* Courses */}
         <div className="overflow-y-scroll h-[75vh] pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900 scrollbar-thumb-rounded">
           {loading ? (
             <p className="text-center text-gray-500">Loading...</p>
