@@ -33,10 +33,9 @@ const Purchases = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.get(
-        `${BACKEND_URL}/user/logout`,
-        { withCredentials: true }
-      );
+      const response = await axios.get(`${BACKEND_URL}/user/logout`, {
+        withCredentials: true,
+      });
       toast.success(response.data.message || "Logged out successfully!");
       localStorage.removeItem("user");
       setIsLoggedIn(false);
@@ -58,16 +57,13 @@ const Purchases = () => {
       }
 
       try {
-        const response = await fetch(
-          `${BACKEND_URL}/user/purchases`,
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-            credentials: "include",
-          }
-        );
+        const response = await fetch(`${BACKEND_URL}/user/purchases`, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          credentials: "include",
+        });
 
         if (!response.ok) {
           throw new Error("Failed to fetch purchases");
@@ -93,13 +89,21 @@ const Purchases = () => {
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
+
       <div
         className={`fixed inset-y-0 left-0 bg-blue-950 p-5 transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0 transition-transform duration-300 ease-in-out w-64 z-50`}
       >
+        {/* Close Icon inside Sidebar (mobile only) */}
+        <div className="flex justify-end md:hidden">
+          <button onClick={toggleSidebar} className="text-white text-3xl mb-6">
+            <HiX />
+          </button>
+        </div>
+
         <nav>
-          <ul className="mt-16 md:mt-0">
+          <ul className="mt-10 md:mt-0">
             <li className="mb-4">
               <Link
                 to="/"
@@ -124,7 +128,6 @@ const Purchases = () => {
                 <FaDownload className="mr-2" /> Purchases
               </Link>
             </li>
-
             <li>
               {isLoggedIn ? (
                 <button
