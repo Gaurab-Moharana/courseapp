@@ -10,11 +10,13 @@ import adminRoute from "./routes/admin.route.js";
 import orderRoute from "./routes/order.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+
+dotenv.config();
 const app = express();
 app.use(express.static("public"));
 app.use(express.json());
 app.use(cookieParser());
-dotenv.config();
+
 //Middlewares
 
 app.use(express.urlencoded({ extended: true }));
