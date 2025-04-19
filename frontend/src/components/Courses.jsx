@@ -91,7 +91,7 @@ const Courses = () => {
       {!isSidebarOpen && (
         <button
           onClick={toggleSidebar}
-          className="md:hidden fixed top-4 left-4 z-[999] text-white bg-gray-800 hover:bg-gray-700 transition-colors p-2 rounded-full shadow-lg"
+          className="md:hidden fixed top-4 left-4 z-[999] text-white   transition-colors p-2 rounded-full shadow-lg"
         >
           <HiMenu className="text-3xl" />
         </button>
