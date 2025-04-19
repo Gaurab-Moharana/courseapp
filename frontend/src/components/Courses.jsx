@@ -163,7 +163,7 @@ const Courses = () => {
       {/* Main content */}
       <main className="bg-gradient-to-r from-black to-blue-950 ml-0 md:ml-64 w-full p-6 md:p-10">
         {/* Search Bar */}
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between  mb-4">
           <div className="flex items-center space-x-5 w-full md:w-[60%]">
             <div className="flex items-center w-80">
               <input
