@@ -163,15 +163,20 @@ const Courses = () => {
       {/* Main content */}
       <main className="bg-gradient-to-r from-black to-blue-950 ml-0 md:ml-64 w-full p-6 md:p-10">
         {/* Search Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-          <div className="flex items-center space-x-3 w-80 md:w-[60%]">
-            <div className="flex items-center w-80">
+        <div className="flex justify-between items-center mb-4 relative">
+          {/* Adjusted flex container */}
+          <div
+            className={`flex items-center space-x-3 w-full ${
+              isSidebarOpen ? "md:w-[calc(100%-16rem)]" : "md:w-[60%]"
+            } transition-all duration-300`}
+          >
+            <div className="flex items-center w-full">
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Type here to search..."
-                className="border border-gray-300 text-white bg-transparent rounded-l-full px-4 py-2 h-10 w-80 focus:outline-none"
+                className="border border-gray-300 text-white bg-transparent rounded-l-full px-4 py-2 h-10 w-full focus:outline-none"
               />
               <button
                 onClick={handleSearch}
