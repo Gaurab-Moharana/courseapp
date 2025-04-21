@@ -28,7 +28,7 @@ const Dashboard = () => {
         <img src={logo} alt="Profile" className="rounded-full mt-2 h-20 w-20" />
         <h2 className="text-lg font-bold text-white mt-4">Dashboard</h2>
       </div>
-      <nav className="flex items-center flex-col space-y-4 ">
+      <nav className="flex items-center flex-col space-y-4 w-full">
         <Link to={"/admin/our-courses"}>
           <button className="w-full bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded">
             Our Courses
