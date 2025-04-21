@@ -21,40 +21,45 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex items-center flex-col h-screen  bg-gradient-to-r from-black to-blue-950">
+    <div className="flex h-screen bg-gradient-to-r from-black to-blue-950">
       {/* Sidebar */}
+      <div className="w-64 bg-blue-900 p-5 flex flex-col items-center">
+        {/* Logo and Admin Label */}
+        <div className="flex flex-col items-center mb-10">
+          <img src={logo} alt="Admin Logo" className="rounded-full h-20 w-20" />
+          <h2 className="text-lg font-bold text-white mt-4">Admin</h2>
+        </div>
 
-      <div className="flex items-center flex-col mb-10">
-        <img src={logo} alt="Profile" className="rounded-full mt-2 h-20 w-20" />
-        <h2 className="text-lg font-bold text-white mt-4">Dashboard</h2>
+        {/* Navigation Buttons */}
+        <nav className="flex flex-col items-center space-y-4 w-full">
+          <Link to="/admin/our-courses">
+            <button className="w-72 sm:w-80 bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded">
+              Our Courses
+            </button>
+          </Link>
+          <Link to="/admin/create-course">
+            <button className="w-72 sm:w-80 bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded">
+              Create Course
+            </button>
+          </Link>
+          <Link to="/">
+            <button className="w-72 sm:w-80 bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded">
+              Home
+            </button>
+          </Link>
+          <Link to="/admin/login">
+            <button
+              onClick={handleAdminLogout}
+              className="w-72 sm:w-80 bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded"
+            >
+              Logout
+            </button>
+          </Link>
+        </nav>
       </div>
-      <nav className="flex flex-col space-y-4 w-full">
-        <Link to={"/admin/our-courses"} className="items-center">
-          <button className="w-80 bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded">
-            Our Courses
-          </button>
-        </Link>
-        <Link to={"/admin/create-course"} className="items-center">
-          <button className="w-80  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded ">
-            Create Course
-          </button>
-        </Link>
-        <Link to={"/"} className="items-center">
-          <button className="w-80  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded ">
-            Home
-          </button>
-        </Link>
-        <Link to={"/admin/login"} className="items-center">
-          <button
-            onClick={handleAdminLogout}
-            className="w-80  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded"
-          >
-            Logout
-          </button>
-        </Link>
-      </nav>
 
-      <div className="flex-1 flex items-center justify-center text-white font-bold ml-5 mt-10 text-2xl ">
+      {/* Main Content */}
+      <div className="flex-1 flex items-center justify-center text-white font-bold text-2xl text-center px-4">
         Welcome Admin!!!
       </div>
     </div>
