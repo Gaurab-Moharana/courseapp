@@ -50,27 +50,30 @@ const AdminSignup = () => {
   return (
     <div className="bg-gradient-to-r from-black to-blue-950 min-h-screen text-white">
       {/* Header */}
-      <header className="flex items-center justify-between container mx-auto px-4 py-6">
+      <header className="flex flex-row justify-between sm:items-center px-4 py-4 gap-2 sm:gap-0">
         <div className="flex items-center space-x-2">
           <img
             src={logo}
             alt="CourseHub Logo"
-            className="w-10 h-10 rounded-full"
+            className="w-7 h-7 sm:w-10 sm:h-10 rounded-full"
           />
-          <Link to={"/"} className="text-2xl font-bold ">
+          <Link
+            to={"/"}
+            className="text-base sm:text-xl md:text-2xl font-bold "
+          >
             CourseHub
           </Link>
         </div>
-        <div className="space-x-4">
+        <div className="flex flex-row flex-wrap sm:space-x-4 space-x-2 items-start sm:items-center">
           <Link
             to={"/admin/login"}
-            className="bg-transparent text-white py-2 px-4 border border-white rounded hover:bg-white duration-300 hover:text-black"
+            className="border border-white text-sm sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded hover:bg-white hover:text-black"
           >
             Login
           </Link>
           <Link
             to={"/courses"}
-            className="bg-transparent text-white py-2 px-4 border border-white rounded hover:bg-white duration-300 hover:text-black"
+            className="border border-white text-sm sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded hover:bg-white hover:text-black"
           >
             Join now
           </Link>
