@@ -21,40 +21,42 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex items-center flex-col min-h-screen  bg-gradient-to-r from-black to-blue-950">
-      {/* Sidebar */}
-
-      <div className="flex items-center flex-col mb-10">
+    <div className="flex flex-col items-center min-h-screen bg-gradient-to-r from-black to-blue-950 py-8 px-4">
+      {/* Top Section with Logo */}
+      <div className="flex flex-col items-center mb-10">
         <img src={logo} alt="Profile" className="rounded-full mt-2 h-20 w-20" />
         <h2 className="text-lg font-bold text-white mt-4">Dashboard</h2>
       </div>
-      <nav className="flex flex-col space-y-4 w-full">
-        <Link to={"/admin/our-courses"} className="items-center ml-4">
-          <button className="w-80 bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded">
+
+      {/* Navigation Buttons */}
+      <nav className="flex flex-col items-center space-y-4 w-full">
+        <Link to="/admin/our-courses">
+          <button className="w-72 sm:w-80 bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded">
             Our Courses
           </button>
         </Link>
-        <Link to={"/admin/create-course"} className="items-center ml-4">
-          <button className="w-80  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded ">
+        <Link to="/admin/create-course">
+          <button className="w-72 sm:w-80 bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded">
             Create Course
           </button>
         </Link>
-        <Link to={"/"} className="items-center ml-4">
-          <button className="w-80  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded ">
+        <Link to="/">
+          <button className="w-72 sm:w-80 bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded">
             Home
           </button>
         </Link>
-        <Link to={"/admin/login"} className="items-center ml-4">
+        <Link to="/admin/login">
           <button
             onClick={handleAdminLogout}
-            className="w-80  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded"
+            className="w-72 sm:w-80 bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded"
           >
             Logout
           </button>
         </Link>
       </nav>
 
-      <div className="flex-1 flex items-center justify-center text-white font-bold ml-5 mt-10 text-2xl ">
+      {/* Welcome Text */}
+      <div className="flex items-center justify-center text-white font-bold text-2xl mt-14 text-center">
         Welcome Admin!!!
       </div>
     </div>
