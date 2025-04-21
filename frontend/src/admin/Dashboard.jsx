@@ -28,26 +28,26 @@ const Dashboard = () => {
         <img src={logo} alt="Profile" className="rounded-full h-20 w-20" />
         <h2 className="text-lg font-bold text-white mt-4">Dashboard</h2>
       </div>
-      <nav className="flex flex-col space-y-4">
+      <nav className="flex flex-col space-y-4 w-80">
         <Link to={"/admin/our-courses"}>
-          <button className="w-60 bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded">
+          <button className="w-full bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded">
             Our Courses
           </button>
         </Link>
         <Link to={"/admin/create-course"}>
-          <button className="w-60  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded ">
+          <button className="w-full  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded ">
             Create Course
           </button>
         </Link>
         <Link to={"/"}>
-          <button className="w-60  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded ">
+          <button className="w-full  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded ">
             Home
           </button>
         </Link>
         <Link to={"/admin/login"}>
           <button
             onClick={handleAdminLogout}
-            className="w-60  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded"
+            className="w-full  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded"
           >
             Logout
           </button>
