@@ -5,16 +5,12 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { BACKEND_URL } from "../utils/util.js";
 
-
 const Dashboard = () => {
   const handleAdminLogout = async () => {
     try {
-      const response = await axios.get(
-        `${BACKEND_URL}/admin/logout`,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.get(`${BACKEND_URL}/admin/logout`, {
+        withCredentials: true,
+      });
 
       toast.success(response.data.message);
       localStorage.removeItem("admin");
@@ -27,7 +23,7 @@ const Dashboard = () => {
   return (
     <div className="flex h-screen  bg-gradient-to-r from-black to-blue-950">
       {/* Sidebar */}
-      <div className="w-64 bg-blue-950 p-5">
+      <div className="w-64  p-5">
         <div className="flex items-center flex-col mb-10">
           <img src={logo} alt="Profile" className="rounded-full h-20 w-20" />
           <h2 className="text-lg font-bold text-white mt-4">Admin</h2>
@@ -58,8 +54,8 @@ const Dashboard = () => {
           </Link>
         </nav>
       </div>
-      <div className="flex h-screen items-center justify-center text-white ml-0 md:ml-[40%]">
-        Welcome!!!
+      <div className="flex h-screen items-center justify-center text-white ml-0 md:ml-[40%]font-bold text-2xl">
+        Welcome Admin Good to see you!!!
       </div>
     </div>
   );
