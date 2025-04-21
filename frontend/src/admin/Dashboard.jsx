@@ -29,22 +29,22 @@ const Dashboard = () => {
         <h2 className="text-lg font-bold text-white mt-4">Dashboard</h2>
       </div>
       <nav className="flex flex-col space-y-4 w-full">
-        <Link to={"/admin/our-courses"}>
+        <Link to={"/admin/our-courses"} className="items-center">
           <button className="w-80 bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded">
             Our Courses
           </button>
         </Link>
-        <Link to={"/admin/create-course"}>
+        <Link to={"/admin/create-course"} className="items-center">
           <button className="w-80  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded ">
             Create Course
           </button>
         </Link>
-        <Link to={"/"}>
+        <Link to={"/"} className="items-center">
           <button className="w-80  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded ">
             Home
           </button>
         </Link>
-        <Link to={"/admin/login"}>
+        <Link to={"/admin/login"} className="items-center">
           <button
             onClick={handleAdminLogout}
             className="w-80  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded"
