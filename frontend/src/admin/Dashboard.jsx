@@ -23,7 +23,7 @@ const Dashboard = () => {
   return (
     <div className="flex h-screen  bg-gradient-to-r from-black to-blue-950">
       {/* Sidebar */}
-      <div className="w-64 to-blue-950 p-5">
+      <div className="w-64 to-blue-900 p-5">
         <div className="flex items-center flex-col mb-10">
           <img src={logo} alt="Profile" className="rounded-full h-20 w-20" />
           <h2 className="text-lg font-bold text-white mt-4">Admin</h2>
@@ -55,7 +55,7 @@ const Dashboard = () => {
         </nav>
       </div>
       <div className="flex h-screen items-center justify-center text-white ml-0 md:ml-[40%]font-bold text-2xl">
-        Welcome Admin Good to see you!!!
+        Welcome Admin!!!
       </div>
     </div>
   );
