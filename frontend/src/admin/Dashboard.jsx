@@ -21,7 +21,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex h-screen  bg-gradient-to-r from-black to-blue-950">
+    <div className="flex flex-col h-screen  bg-gradient-to-r from-black to-blue-950">
       {/* Sidebar */}
 
       <div className="flex items-center flex-col mb-10">
