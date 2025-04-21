@@ -30,24 +30,24 @@ const Dashboard = () => {
       </div>
       <nav className="flex flex-col space-y-4 w-full">
         <Link to={"/admin/our-courses"}>
-          <button className="w-full bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded">
+          <button className="w-80 bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded">
             Our Courses
           </button>
         </Link>
         <Link to={"/admin/create-course"}>
-          <button className="w-full  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded ">
+          <button className="w-80  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded ">
             Create Course
           </button>
         </Link>
         <Link to={"/"}>
-          <button className="w-full  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded ">
+          <button className="w-80  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded ">
             Home
           </button>
         </Link>
         <Link to={"/admin/login"}>
           <button
             onClick={handleAdminLogout}
-            className="w-full  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded"
+            className="w-80  bg-green-700 hover:bg-green-600 text-white py-2 cursor-pointer rounded"
           >
             Logout
           </button>
