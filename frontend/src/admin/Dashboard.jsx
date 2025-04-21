@@ -23,7 +23,7 @@ const Dashboard = () => {
   return (
     <div className="flex h-screen  bg-gradient-to-r from-black to-blue-950">
       {/* Sidebar */}
-      <div className="w-64  p-5">
+      <div className=" p-5">
         <div className="flex items-center flex-col mb-10">
           <img src={logo} alt="Profile" className="rounded-full h-20 w-20" />
           <h2 className="text-lg font-bold text-white mt-4">Admin</h2>
