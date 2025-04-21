@@ -54,7 +54,7 @@ const Dashboard = () => {
           </Link>
         </nav>
       </div>
-      <div className="flex-1 flex items-center justify-center text-white font-bold text-2xl ">
+      <div className="flex-1 flex items-center justify-center text-white font-bold ml-5 text-2xl ">
         Welcome Admin!!!
       </div>
     </div>
