@@ -54,7 +54,7 @@ const Dashboard = () => {
           </Link>
         </nav>
       </div>
-      <div className="flex h-screen items-center justify-center text-white ml-[30%] md:ml-[50%]md:text-sm font-bold text-2xl">
+      <div className="flex h-screen items-center justify-center text-white ml-[30%] md:ml-[30%]md:text-sm font-bold text-2xl">
         Welcome Admin!!!
       </div>
     </div>
